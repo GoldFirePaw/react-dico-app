@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Search from './Search';
 import Prononciation from './Prononciation';
-import Definitions from './Definitions';
-import Verb from './Verb';
+import Meanings from './Meanings';
 import Pictures from './Pictures';
 
 export default function Dictionary() {
@@ -28,8 +27,7 @@ export default function Dictionary() {
         {data &&
             <>
                 <Prononciation word={word} audio={data.phonetics} />
-                <Definitions />
-                <Verb />
+                <Meanings meanings={data.meanings} />
                 <Pictures />
             </>
         }
