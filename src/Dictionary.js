@@ -4,10 +4,12 @@ import Search from './Search';
 import Prononciation from './Prononciation';
 import Meanings from './Meanings';
 import Pictures from './Pictures';
+import Error from "./Error";
 
 export default function Dictionary() {
     const [word, setWord] = useState();
     const [data, setData] = useState()
+    const [error, setError] = useState();
 
     useEffect(() => {
         if (word) {
