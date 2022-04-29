@@ -16,9 +16,11 @@ export default function Dictionary() {
             let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
             axios.get(apiUrl).then(function (response) {
                 setData(response);
+                setError(null)
                 console.log(response)
             }).catch(function (error) {
                 setError(error.response.data)
+                setData(null)
             })
         }
 
@@ -26,7 +28,6 @@ export default function Dictionary() {
 
     function trueOrFalse() {
         if (data) {
-
             return (<>
                 <Prononciation error={false} data={true} word={word} audio={data.data[0].phonetics} />
                 <Meanings error={false} data={true} meanings={data.data[0].meanings} />
