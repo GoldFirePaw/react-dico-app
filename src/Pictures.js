@@ -1,31 +1,25 @@
-export default function Pictures() {
+export default function Pictures(props) {
+    let imagesUrl = props.imgUrl
+    console.log(imagesUrl)
     return (
         <section>
             <div className="container">
                 <div className="row">
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
+                    {
+                        imagesUrl && imagesUrl.map(function (imagesUrl, index) {
+                            return (
+                                <div className="col-4" key={index}>
+                                    <a href={imagesUrl.src.landscape}>
+                                        <img src={imagesUrl.src.landscape} alt={imagesUrl.alt} />
+                                    </a>
+                                </div>
+                            );
+                        })
+                    }
                 </div>
-                <div className="row">
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
-                    <div className="col">
-                        <img src="https://images.pexels.com/photos/11056184/pexels-photo-11056184.jpeg?cs=srgb&dl=pexels-jan-van-der-wolf-11056184.jpg&fm=jpg" alt="Radiateur" />
-                    </div>
-                </div>
-
             </div>
         </section>
     );
 }
+
+/**/
