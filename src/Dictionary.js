@@ -54,7 +54,7 @@ export default function Dictionary() {
         <Search setWord={setWord} word={word} />
         <div>{trueOrFalse()}</div>
         <div>Link to my
-            <a href="https://github.com/GoldFirePaw/react-dico-app">GitHub</a>
+            <a target="blank" href="https://github.com/GoldFirePaw/react-dico-app">GitHub</a>
         </div>
     </div>)
 }

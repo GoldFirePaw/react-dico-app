@@ -9,7 +9,7 @@ export default function Pictures(props) {
                         imagesUrl && imagesUrl.map(function (imagesUrl, index) {
                             return (
                                 <div className="col-4" key={index}>
-                                    <a href={imagesUrl.src.landscape}>
+                                    <a href={imagesUrl.src.landscape} target="blank">
                                         <img src={imagesUrl.src.landscape} alt={imagesUrl.alt} />
                                     </a>
                                 </div>
