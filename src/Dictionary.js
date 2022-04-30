@@ -53,5 +53,8 @@ export default function Dictionary() {
     return (<div className='app-container'>
         <Search setWord={setWord} word={word} />
         <div>{trueOrFalse()}</div>
+        <div>Link to my
+            <a href="https://github.com/GoldFirePaw/react-dico-app">GitHub</a>
+        </div>
     </div>)
 }
